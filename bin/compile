@@ -84,4 +84,4 @@ export PKG_CONFIG_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$BUIL
 export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
 
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-cat "$LP_DIR/export" | indent
+for i in `echo $LIBRARY_PATH | tr ":" "\n"`; do ls $i; echo "!!!"; done;
